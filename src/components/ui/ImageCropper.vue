@@ -125,7 +125,9 @@ const crop = () => {
     class="image-cropper p-0 m-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl max-h-[90vh] overflow-y-auto relative w-[320px] sm:w-[600px]"
   >
     <div class="image-cropper__container p-6">
-      <h3 class="image-cropper__title text-lg font-semibold mb-4 dark:text-white">{{ t('components.imageCropper.title') }}</h3>
+      <h3 class="image-cropper__title text-lg font-semibold mb-4 dark:text-white">
+        {{ t('components.imageCropper.title') }}
+      </h3>
 
       <div
         class="image-cropper__area aspect-square w-full mx-auto mb-4 bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden"
@@ -157,7 +159,7 @@ const crop = () => {
         </button>
         <button
           @click="crop"
-          class="image-cropper__button image-cropper__button--confirm px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 transition-colors duration-200"
+          class="image-cropper__button image-cropper__button--confirm px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 dark:bg-sky-600 dark:hover:bg-sky-700 transition-colors duration-200"
         >
           OK
         </button>
