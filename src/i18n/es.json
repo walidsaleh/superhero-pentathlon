@@ -1,0 +1,301 @@
+{
+  "app": {
+    "appTitle": "Pentatlón de Superhéroes",
+    "theme": {
+      "toggle": "Cambiar tema"
+    },
+    "title": "Pentatlón de Superhéroes"
+  },
+  "language": {
+    "label": "Seleccionar idioma",
+    "current": {
+      "en": "English",
+      "es": "Español"
+    },
+    "select": {
+      "en": "English",
+      "es": "Español"
+    }
+  },
+  "home": {
+    "title": "¡Bienvenido al Pentatlón de Superhéroes!",
+    "subtitle": "Donde héroes extraordinarios compiten en desafíos extraordinarios",
+    "heroes": {
+      "title": "Gestionar Héroes",
+      "description": "Crea, edita y gestiona tu plantilla de superhéroes. Cada héroe tiene atributos únicos que determinarán su rendimiento en el pentatlón.",
+      "action": "Ver Héroes"
+    },
+    "pentathlon": {
+      "title": "El Pentatlón",
+      "description": "Cinco emocionantes eventos esperan a tus héroes: Escalada de Muros, Contar Chistes, Disparo al Villano, Carrera de 200km y Rescate de Gatos. ¿Quién saldrá victorioso?",
+      "action": "Iniciar Competición"
+    }
+  },
+  "navigation": {
+    "brand": "Pentatlón de Superhéroes",
+    "menu": {
+      "home": "Inicio",
+      "heroes": "Héroes",
+      "pentathlon": "Pentatlón",
+      "settings": "Ajustes"
+    },
+    "aria": {
+      "toggleMenu": "Alternar menú",
+      "closeMenu": "Cerrar menú",
+      "mobileMenu": "Menú móvil"
+    }
+  },
+  "settings": {
+    "theme": {
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Sistema"
+    }
+  },
+  "welcome": {
+    "documentation": {
+      "title": "Documentación",
+      "description": "Toda la información que necesitas para empezar se encuentra en la",
+      "link": "documentación oficial"
+    },
+    "tooling": {
+      "title": "Herramientas",
+      "description": "Nuestro proyecto utiliza las mejores herramientas para el desarrollo de aplicaciones web modernas: Vue 3, TypeScript y TailwindCSS."
+    },
+    "ecosystem": {
+      "title": "Ecosistema",
+      "description": "Utilizamos las herramientas oficiales de Vue como Vue Router para la navegación y Pinia para la gestión del estado."
+    },
+    "community": {
+      "title": "Comunidad",
+      "description": "Forma parte de nuestra comunidad de superhéroes y comparte tus experiencias en el Pentatlón."
+    },
+    "support": {
+      "title": "Soporte",
+      "description": "¡Ayúdanos a mejorar el Pentatlón de Superhéroes! Tu feedback es muy importante para nosotros."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "¡Bienvenido al Pentatlón de Superhéroes!",
+      "subtitle": "Donde héroes extraordinarios compiten en desafíos extraordinarios",
+      "getStarted": "Comenzar"
+    },
+    "heroes": {
+      "title": "Galería de Héroes",
+      "empty": {
+        "title": "No se encontraron superhéroes.",
+        "reload": "Recargar",
+        "welcome": "¡Bienvenido al Registro de Superhéroes!",
+        "noHeroes": "Aún no hay superhéroes registrados",
+        "startAdding": "Comienza añadiendo tu primer superhéroe usando el botón de arriba",
+        "features": {
+          "create": "Crea superhéroes únicos con habilidades especiales",
+          "attributes": "Cada héroe tiene 5 atributos clave: Agilidad, Fuerza, Peso, Resistencia y Carisma",
+          "performance": "Estos atributos determinarán su rendimiento en los eventos del Pentatlón",
+          "minimum": "Necesitarás al menos 3 héroes para iniciar una competición de Pentatlón"
+        }
+      },
+      "search": {
+        "label": "Buscar héroes",
+        "placeholder": "Escribe para buscar..."
+      },
+      "actions": {
+        "new": "Nuevo Héroe",
+        "edit": "Editar",
+        "delete": "Eliminar",
+        "view": "Ver Detalles",
+        "tryAgain": "Recargar Lista",
+        "reload": "Recargar Lista"
+      }
+    },
+    "pentathlon": {
+      "title": "Eventos del Pentatlón",
+      "description": "Cinco emocionantes eventos esperan a tus héroes: Escalada de Muros, Contar Chistes, Disparo al Villano, Carrera de 200km y Rescate de Gatos. ¿Quién saldrá victorioso?",
+      "selection": {
+        "title": "Selecciona Tus Héroes",
+        "required": "Selecciona {0} héroes para iniciar la competición",
+        "more": "Selecciona {0} héroes más para iniciar",
+        "complete": "¡Selección completa! Puedes iniciar la competición.",
+        "notEnoughHeroes": "Necesitas al menos {required} héroes para crear una competición",
+        "noHeroes": "Aún no tienes ningún héroe"
+      },
+      "events": {
+        "about": "Acerca de los Eventos:",
+        "wallClimbing": {
+          "name": "Escalada de Muros",
+          "description": "Prueba de fuerza y agilidad",
+          "shortDesc": "Prueba de fuerza vs peso"
+        },
+        "jokeTelling": {
+          "name": "Contar Chistes",
+          "description": "Prueba de carisma",
+          "shortDesc": "Desafío de carisma"
+        },
+        "villainShot": {
+          "name": "Disparo al Villano",
+          "description": "Prueba de precisión y fuerza",
+          "shortDesc": "Agilidad y fuerza combinadas"
+        },
+        "race": {
+          "name": "Carrera de 200km",
+          "description": "Prueba de resistencia y velocidad",
+          "shortDesc": "Prueba de velocidad y resistencia"
+        },
+        "catRescue": {
+          "name": "Rescate de Gatos",
+          "description": "Prueba de agilidad y éxito previo",
+          "shortDesc": "Agilidad con bonus para campeones"
+        }
+      },
+      "actions": {
+        "start": "Iniciar Competición",
+        "next": "Siguiente Evento",
+        "previous": "Evento Anterior",
+        "finish": "Finalizar",
+        "reset": "Reiniciar",
+        "viewDetails": "Ver Detalles",
+        "createHeroes": "Crear Héroes",
+        "goToHeroesPage": "Ir a la Página de Héroes",
+        "createFirstHero": "Crea Tu Primer Héroe"
+      },
+      "results": {
+        "title": "Resultados de la Competición"
+      },
+      "scoring": {
+        "title": "Puntuación",
+        "first": "Primer Lugar: 5 puntos",
+        "second": "Segundo Lugar: 3 puntos",
+        "third": "Tercer Lugar: 1 punto",
+        "firstShort": "1<sup>º</sup>",
+        "secondShort": "2<sup>º</sup>",
+        "thirdShort": "3<sup>º</sup>",
+        "gold": "Oro",
+        "silver": "Plata",
+        "bronze": "Bronce",
+        "points": "pts",
+        "eventResults": "Resultados de los Eventos",
+        "close": "Cerrar",
+        "viewDetails": "Ver Detalles",
+        "finalRankings": "Clasificación Final"
+      }
+    },
+    "settings": {
+      "title": "Configuración",
+      "theme": {
+        "label": "Tema",
+        "options": {
+          "light": "Claro",
+          "dark": "Oscuro",
+          "system": "Sistema"
+        }
+      }
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ha ocurrido un error",
+    "retry": "Reintentar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "delete": "Eliminar",
+    "confirmDeletion": "Confirmar Eliminación",
+    "required": "Requerido",
+    "reset": "Reiniciar"
+  },
+  "dialog": {
+    "delete": {
+      "confirmation": "¿Estás seguro de que quieres eliminar este superhéroe? Esta acción no se puede deshacer."
+    }
+  },
+  "pagination": {
+    "showing": "Mostrando {count} de {total}"
+  },
+  "components": {
+    "imageCropper": {
+      "title": "Recortar Imagen"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "Página No Encontrada",
+      "description": "La página que buscas no existe o ha sido movida.",
+      "goBack": "Volver",
+      "goHome": "Ir al Inicio"
+    },
+    "superhero": {
+      "fetch": "Error al cargar superhéroes",
+      "create": "Error al crear superhéroe",
+      "update": "Error al actualizar superhéroe",
+      "delete": "Error al eliminar superhéroe",
+      "fetchFailed": "No se pudo obtener la lista de superhéroes",
+      "createFailed": "No se pudo crear el superhéroe",
+      "updateFailed": "No se pudo actualizar el superhéroe",
+      "deleteFailed": "No se pudo eliminar el superhéroe"
+    },
+    "loadingSuperheroes": "Error al cargar superhéroes: {error}"
+  },
+  "success": {
+    "superhero": {
+      "create": "Superhéroe creado con éxito",
+      "update": "Superhéroe actualizado con éxito",
+      "delete": "Superhéroe eliminado con éxito"
+    }
+  },
+  "form": {
+    "title": {
+      "create": "Crear Nuevo Héroe",
+      "edit": "Editar Héroe"
+    },
+    "image": {
+      "label": "Imagen del Héroe",
+      "placeholder": "Haz clic o arrastra una imagen aquí",
+      "error": "La imagen es obligatoria",
+      "alt": {
+        "preview": "Vista previa del héroe",
+        "placeholder": "Icono de marcador de imagen"
+      },
+      "change": "Cambiar imagen",
+      "upload": "Subir imagen",
+      "drop": "Suelta la imagen aquí"
+    },
+    "name": {
+      "label": "Nombre del Héroe",
+      "placeholder": "Introduce el nombre del héroe",
+      "error": "El nombre es obligatorio"
+    },
+    "attributes": {
+      "title": "Atributos",
+      "groupLabel": "Estadísticas del héroe",
+      "stats": {
+        "agility": "Agilidad",
+        "strength": "Fuerza",
+        "weight": "Peso",
+        "endurance": "Resistencia",
+        "charisma": "Carisma"
+      },
+      "controls": {
+        "decrease": "Disminuir {stat}",
+        "increase": "Aumentar {stat}",
+        "value": "Valor de {stat}"
+      },
+      "error": "Debe estar entre {min} y {max}"
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "save": "Guardar",
+      "create": "Crear",
+      "loading": "Cargando"
+    },
+    "aria": {
+      "close": "Cancelar y cerrar formulario",
+      "saveChanges": "Guardar cambios",
+      "createHero": "Crear héroe",
+      "heroInfo": "Sección de información del héroe",
+      "loading": "Cargando, por favor espere",
+      "closeForm": "Cerrar formulario",
+      "imageDropzone": "Área para subir imagen"
+    }
+  }
+}

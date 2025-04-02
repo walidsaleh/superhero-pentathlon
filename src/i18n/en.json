@@ -1,0 +1,300 @@
+{
+  "app": {
+    "appTitle": "Superhero Pentathlon",
+    "theme": {
+      "toggle": "Toggle theme"
+    },
+    "title": "Superhero Pentathlon"
+  },
+  "language": {
+    "label": "Select language",
+    "current": {
+      "en": "English",
+      "es": "Español"
+    },
+    "selectLanguage": {
+      "en": "English",
+      "es": "Español"
+    }
+  },
+  "home": {
+    "title": "Welcome to Superhero Pentathlon!",
+    "subtitle": "Where extraordinary heroes compete in extraordinary challenges",
+    "heroes": {
+      "title": "Manage Heroes",
+      "description": "Create, edit, and manage your superhero roster. Each hero has unique attributes that will determine their performance in the pentathlon.",
+      "action": "View Heroes"
+    },
+    "pentathlon": {
+      "title": "The Pentathlon",
+      "description": "Five exciting events await your heroes: Wall Climbing, Joke Telling, Villain Shot, 200km Race, and Cat Rescue. Who will emerge victorious?",
+      "action": "Start Competition"
+    }
+  },
+  "navigation": {
+    "brand": "Superhero Pentathlon",
+    "menu": {
+      "home": "Home",
+      "heroes": "Heroes",
+      "pentathlon": "Pentathlon",
+      "settings": "Settings"
+    },
+    "aria": {
+      "toggleMenu": "Toggle menu",
+      "closeMenu": "Close menu",
+      "mobileMenu": "Mobile menu"
+    }
+  },
+  "settings": {
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+  "welcome": {
+    "documentation": {
+      "title": "Documentation",
+      "description": "All the information you need to get started can be found in the",
+      "link": "official documentation"
+    },
+    "tooling": {
+      "title": "Tooling",
+      "description": "Our project uses the best tools for modern web application development: Vue 3, TypeScript, and TailwindCSS."
+    },
+    "ecosystem": {
+      "title": "Ecosystem",
+      "description": "We use official Vue tools like Vue Router for navigation and Pinia for state management."
+    },
+    "community": {
+      "title": "Community",
+      "description": "Be part of our superhero community and share your experiences in the Pentathlon."
+    },
+    "support": {
+      "title": "Support",
+      "description": "Help us improve the Superhero Pentathlon! Your feedback is very important to us."
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Welcome to Superhero Pentathlon",
+      "subtitle": "Where heroes compete in epic challenges",
+      "getStarted": "Get Started"
+    },
+    "heroes": {
+      "title": "Heroes Gallery",
+      "empty": {
+        "title": "No superheroes found.",
+        "reload": "Reload",
+        "welcome": "Welcome to the Superhero Registry!",
+        "noHeroes": "No superheroes registered yet",
+        "startAdding": "Start by adding your first superhero using the button above",
+        "features": {
+          "create": "Create unique superheroes with special abilities",
+          "attributes": "Each hero has 5 key attributes: Agility, Strength, Weight, Endurance, and Charisma",
+          "performance": "These attributes will determine their performance in the Pentathlon events",
+          "minimum": "You'll need at least 3 heroes to start a Pentathlon competition"
+        }
+      },
+      "search": {
+        "label": "Search heroes",
+        "placeholder": "Type to search..."
+      },
+      "actions": {
+        "new": "New Hero",
+        "edit": "Edit",
+        "delete": "Delete",
+        "view": "View Details",
+        "tryAgain": "Reload List",
+        "reload": "Reload List"
+      }
+    },
+    "pentathlon": {
+      "title": "Pentathlon Events",
+      "description": "Five exciting events await your heroes: Wall Climbing, Joke Telling, Villain Shot, 200km Race, and Cat Rescue. Who will emerge victorious?",
+      "selection": {
+        "title": "Select Your Heroes",
+        "required": "Select {0} heroes to start the competition",
+        "more": "Select {0} more heroes to start",
+        "complete": "Selection complete! You can start the competition.",
+        "notEnoughHeroes": "You need at least {required} heroes to create a competition",
+        "noHeroes": "You don't have any heroes yet"
+      },
+      "events": {
+        "about": "About the Events:",
+        "wallClimbing": {
+          "name": "Wall Climbing",
+          "description": "Test of strength and agility",
+          "shortDesc": "Test of strength vs weight"
+        },
+        "jokeTelling": {
+          "name": "Joke Telling",
+          "description": "Test of charisma",
+          "shortDesc": "Charisma challenge"
+        },
+        "villainShot": {
+          "name": "Villain Shot",
+          "description": "Test of accuracy and strength",
+          "shortDesc": "Agility and strength combined"
+        },
+        "race": {
+          "name": "200km Race",
+          "description": "Test of endurance and speed",
+          "shortDesc": "Speed and endurance test"
+        },
+        "catRescue": {
+          "name": "Cat Rescue",
+          "description": "Test of agility and previous success",
+          "shortDesc": "Agility with bonus for champions"
+        }
+      },
+      "actions": {
+        "start": "Start Competition",
+        "next": "Next Event",
+        "previous": "Previous Event",
+        "finish": "Finish",
+        "reset": "Reset",
+        "viewDetails": "View Details",
+        "createHeroes": "Create Heroes",
+        "goToHeroesPage": "Go to Heroes Page",
+        "createFirstHero": "Create Your First Hero"
+      },
+      "results": {
+        "title": "Competition Results"
+      },
+      "scoring": {
+        "title": "Scoring",
+        "first": "First Place: 5 points",
+        "second": "Second Place: 3 points",
+        "third": "Third Place: 1 point",
+        "firstShort": "1<sup>st</sup>",
+        "secondShort": "2<sup>nd</sup>",
+        "thirdShort": "3<sup>rd</sup>",
+        "gold": "Gold",
+        "silver": "Silver",
+        "bronze": "Bronze",
+        "points": "pts",
+        "eventResults": "Event Results",
+        "close": "Close",
+        "viewDetails": "View Details",
+        "finalRankings": "Final Rankings"
+      }
+    },
+    "settings": {
+      "title": "Settings",
+      "theme": {
+        "label": "Theme",
+        "options": {
+          "light": "Switch to light theme",
+          "dark": "Switch to dark theme",
+          "system": "System"
+        }
+      }
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "confirmDeletion": "Confirm Deletion",
+    "required": "Required",
+    "reset": "Reset"
+  },
+  "dialog": {
+    "delete": {
+      "confirmation": "Are you sure you want to delete this superhero? This action cannot be undone."
+    }
+  },
+  "pagination": {
+    "showing": "Showing {count} of {total}"
+  },
+  "components": {
+    "imageCropper": {
+      "title": "Crop Image"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "goBack": "Go Back",
+      "goHome": "Go to Home"
+    },
+    "superhero": {
+      "fetch": "Failed to load superheroes",
+      "create": "Failed to create superhero",
+      "update": "Failed to update superhero",
+      "delete": "Failed to delete superhero",
+      "fetchFailed": "Failed to load superheroes",
+      "createFailed": "Failed to create superhero",
+      "updateFailed": "Failed to update superhero",
+      "deleteFailed": "Failed to delete superhero"
+    }
+  },
+  "success": {
+    "superhero": {
+      "create": "Superhero created successfully",
+      "update": "Superhero updated successfully",
+      "delete": "Superhero deleted successfully"
+    }
+  },
+  "form": {
+    "title": {
+      "create": "Create New Hero",
+      "edit": "Edit Hero"
+    },
+    "image": {
+      "label": "Hero Image",
+      "placeholder": "Click or drag image here",
+      "error": "Image is required",
+      "alt": {
+        "preview": "Hero preview image",
+        "placeholder": "Image placeholder icon"
+      },
+      "change": "Change image",
+      "upload": "Upload image",
+      "drop": "Drop image here"
+    },
+    "name": {
+      "label": "Hero Name",
+      "placeholder": "Enter hero name",
+      "error": "Name is required"
+    },
+    "attributes": {
+      "title": "Attributes",
+      "groupLabel": "Hero stats",
+      "stats": {
+        "agility": "Agility",
+        "strength": "Strength",
+        "weight": "Weight",
+        "endurance": "Endurance",
+        "charisma": "Charisma"
+      },
+      "controls": {
+        "decrease": "Decrease {stat}",
+        "increase": "Increase {stat}",
+        "value": "{stat} value"
+      },
+      "error": "Must be between {min} and {max}"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "create": "Create",
+      "loading": "Loading"
+    },
+    "aria": {
+      "close": "Cancel and close form",
+      "saveChanges": "Save changes",
+      "createHero": "Create hero",
+      "heroInfo": "Hero information section",
+      "loading": "Loading, please wait",
+      "closeForm": "Close form",
+      "imageDropzone": "Image upload area"
+    }
+  }
+}
