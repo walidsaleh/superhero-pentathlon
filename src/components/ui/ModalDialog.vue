@@ -103,20 +103,20 @@ onUnmounted(() => {
 </template>
 
 <style>
-/* Estilo para el backdrop del diálogo */
+/* Styling for the dialog backdrop */
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(4px);
-  z-index: 9000; /* Asegura que el backdrop esté por debajo de los toasts */
+  z-index: 9000; /* Ensure the backdrop is below toasts */
 }
 
-/* Establecer un z-index para el diálogo */
+/* Styling for the dialog */
 dialog {
   position: relative;
   z-index: 9500; /* Mayor que el backdrop pero menor que los toasts */
 }
 
-/* Animaciones para el diálogo */
+/* Dialog animation */
 dialog[open] {
   animation: dialog-show 0.2s ease-out;
 }
