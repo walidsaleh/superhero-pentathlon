@@ -85,15 +85,13 @@ const label = computed(() => labels[props.type])
       :class="[
         compact
           ? 'attribute-bar-compact__bar-container flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden'
-          : 'h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden',
-        !compact ? '' : ''
+          : 'h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden'
       ]"
     >
       <div
         class="h-full bg-sky-500 dark:bg-sky-600 transition-all duration-300 ease-out"
         :style="{ width: `${(value / 10) * 100}%` }"
       />
-      <span v-if="!compact" class="hidden"></span>
     </div>
   </div>
 </template>
