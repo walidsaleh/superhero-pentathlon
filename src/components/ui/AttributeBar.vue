@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // External libraries
+import { computed } from 'vue'
 import {
   BoltIcon,
   HandRaisedIcon,
@@ -7,13 +8,29 @@ import {
   ShieldExclamationIcon,
   SparklesIcon
 } from '@heroicons/vue/24/solid'
-import type { SuperheroAttribute } from '@/types/superhero'
+import { useI18n } from 'vue-i18n'
+// Import the SuperheroAttributes type
+import type { SuperheroAttributes } from '@/types/superhero'
 
+const { t } = useI18n()
+
+// Define props
 const props = defineProps<{
-  label: string
   value: number
-  type?: SuperheroAttribute
+  type: keyof SuperheroAttributes // Infer the type keys dynamically
 }>()
+
+// Labels map
+const labels = {
+  agility: t('form.attributes.stats.agility'),
+  strength: t('form.attributes.stats.strength'),
+  weight: t('form.attributes.stats.weight'),
+  endurance: t('form.attributes.stats.endurance'),
+  charisma: t('form.attributes.stats.charisma')
+}
+
+// Computed label based on the type prop
+const label = computed(() => labels[props.type])
 
 // Icon map based on attribute type
 const iconMap = {
@@ -24,17 +41,9 @@ const iconMap = {
   charisma: SparklesIcon
 } as const
 
-// Determine the icon to display based on the type or try to infer it from the label
+// Determine the icon to display based on the type
 const getIcon = () => {
-  if (props.type && iconMap[props.type]) {
-    return iconMap[props.type]
-  }
-
-  // Try to infer the type from the label (for compatibility with existing code)
-  const lowerLabel = props.label.toLowerCase()
-  const matchedType = Object.keys(iconMap).find((key) => lowerLabel.includes(key))
-
-  return matchedType ? iconMap[matchedType as SuperheroAttribute] : BoltIcon // Default icon
+  return iconMap[props.type]
 }
 </script>
 

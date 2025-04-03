@@ -53,31 +53,11 @@ defineEmits<{
     <div class="p-4 space-y-4">
       <h3 class="text-lg font-bold dark:text-white font-karla">{{ hero.name }}</h3>
       <div class="space-y-2">
-        <AttributeBar
-          :label="t('form.attributes.stats.agility')"
-          :value="hero.attributes.agility"
-          type="agility"
-        />
-        <AttributeBar
-          :label="t('form.attributes.stats.strength')"
-          :value="hero.attributes.strength"
-          type="strength"
-        />
-        <AttributeBar
-          :label="t('form.attributes.stats.weight')"
-          :value="hero.attributes.weight"
-          type="weight"
-        />
-        <AttributeBar
-          :label="t('form.attributes.stats.endurance')"
-          :value="hero.attributes.endurance"
-          type="endurance"
-        />
-        <AttributeBar
-          :label="t('form.attributes.stats.charisma')"
-          :value="hero.attributes.charisma"
-          type="charisma"
-        />
+        <AttributeBar :value="hero.attributes.agility" type="agility" />
+        <AttributeBar :value="hero.attributes.strength" type="strength" />
+        <AttributeBar :value="hero.attributes.weight" type="weight" />
+        <AttributeBar :value="hero.attributes.endurance" type="endurance" />
+        <AttributeBar :value="hero.attributes.charisma" type="charisma" />
       </div>
     </div>
   </div>
