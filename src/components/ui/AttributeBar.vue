@@ -56,10 +56,11 @@ const MAX_VALUE = STAT_LIMITS.MAX
 
 <template>
   <div
-    :class="[
-      'superhero-attribute-bar',
-      compact ? 'attribute-bar-compact flex items-center gap-2' : 'space-y-1'
-    ]"
+    :class="{
+      'superhero-attribute-bar': true,
+      'attribute-bar-compact flex items-center gap-2': compact,
+      'flex flex-col gap-1 w-full': !compact
+    }"
   >
     <template v-if="compact">
       <component :is="getIcon()" class="w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400" />
@@ -68,28 +69,17 @@ const MAX_VALUE = STAT_LIMITS.MAX
     <div v-else class="flex justify-between text-sm">
       <div class="flex items-center gap-2">
         <component :is="getIcon()" class="w-4 h-4 text-gray-600 dark:text-gray-400" />
-        <span class="sr-only">{{ label }}</span>
         <span class="font-medium dark:text-gray-300">{{ label }}</span>
       </div>
       <span class="text-sky-600 dark:text-sky-400 font-bold">{{ value }}/{{ MAX_VALUE }}</span>
     </div>
 
-    <div
-      :class="[
-        compact
-          ? 'attribute-bar-compact__bar-container flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden'
-          : 'h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden'
-      ]"
-      role="progressbar"
-      :aria-valuenow="value"
-      :aria-valuemin="MIN_VALUE"
-      :aria-valuemax="MAX_VALUE"
+    <progress
+      :value="value"
+      :min="MIN_VALUE"
+      :max="MAX_VALUE"
       :aria-label="`${label}: ${value}/${MAX_VALUE}`"
-    >
-      <div
-        class="h-full bg-sky-500 dark:bg-sky-600 transition-all duration-300 ease-out"
-        :style="{ width: `${(value / MAX_VALUE) * 100}%` }"
-      />
-    </div>
+      class="w-full h-2 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden appearance-none [&::-webkit-progress-bar]:bg-gray-200 dark:[&::-webkit-progress-bar]:bg-gray-800 [&::-webkit-progress-value]:bg-sky-500 [&::-moz-progress-bar]:bg-sky-500"
+    />
   </div>
 </template>
