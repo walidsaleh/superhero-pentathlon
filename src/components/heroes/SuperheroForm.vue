@@ -16,7 +16,7 @@ import { useI18n } from 'vue-i18n'
 // Components
 import ImageCropper from '@/components/ui/ImageCropper.vue'
 // Types
-import type { Superhero } from '@/types/superhero'
+import type { Superhero, SuperheroAttributes } from '@/types/superhero'
 import { STAT_LIMITS, DEFAULT_ATTRIBUTES } from '@/types/superhero'
 
 const { t } = useI18n()
@@ -50,7 +50,7 @@ const form = ref<Omit<Superhero, 'id'>>({
   }
 })
 
-type AttributeName = 'agility' | 'strength' | 'weight' | 'endurance' | 'charisma'
+type AttributeName = keyof SuperheroAttributes
 
 const stats = ref<
   Array<{ key: AttributeName; label: string; icon: FunctionalComponent<SVGAttributes> }>
