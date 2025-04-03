@@ -151,6 +151,16 @@ const handleDrop = (event: DragEvent) => {
   showCropper.value = true
 }
 
+const decreaseStat = (statKey: AttributeName) => {
+  form.value.attributes[statKey] = Math.max(form.value.attributes[statKey] - 1, STAT_LIMITS.MIN)
+  validateField(statKey)
+}
+
+const increaseStat = (statKey: AttributeName) => {
+  form.value.attributes[statKey] = Math.min(form.value.attributes[statKey] + 1, STAT_LIMITS.MAX)
+  validateField(statKey)
+}
+
 const submitForm = () => {
   if (!validateForm()) {
     return
@@ -319,7 +329,7 @@ const submitForm = () => {
                       type="button"
                       class="w-6 h-6 flex items-center justify-center rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 disabled:opacity-50"
                       :disabled="form.attributes[stat.key] <= STAT_LIMITS.MIN"
-                      @click="form.attributes[stat.key] = Math.max(form.attributes[stat.key] - 1, STAT_LIMITS.MIN); validateField(stat.key)"
+                      @click="decreaseStat(stat.key)"
                       :aria-label="
                         t('form.attributes.controls.decrease', {
                           stat: t(`form.attributes.stats.${stat.key}`)
@@ -351,7 +361,7 @@ const submitForm = () => {
                       type="button"
                       class="w-6 h-6 flex items-center justify-center rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 disabled:opacity-50"
                       :disabled="form.attributes[stat.key] >= STAT_LIMITS.MAX"
-                      @click="form.attributes[stat.key] = Math.min(form.attributes[stat.key] + 1, STAT_LIMITS.MAX); validateField(stat.key)"
+                      @click="increaseStat(stat.key)"
                       :aria-label="
                         t('form.attributes.controls.increase', {
                           stat: t(`form.attributes.stats.${stat.key}`)
