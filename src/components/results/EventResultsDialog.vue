@@ -52,7 +52,7 @@ const sortedResults = computed(() => {
                 </h3>
                 <button
                   type="button"
-                  class="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:text-gray-500 dark:hover:text-gray-400"
+                  class="rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:text-gray-500 dark:hover:text-gray-400"
                   @click="onClose"
                 >
                   <span class="sr-only">{{ t('pages.pentathlon.scoring.close') }}</span>
@@ -102,10 +102,12 @@ const sortedResults = computed(() => {
             </div>
           </div>
         </div>
-        <div class="border-t dark:border-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+        <div
+          class="border-t border-gray-200 dark:border-gray-700 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"
+        >
           <button
             type="button"
-            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary-500 text-base font-medium text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 sm:ml-3 sm:w-auto sm:text-sm dark:bg-primary-600 dark:hover:bg-primary-700"
+            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-sky-500 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 sm:ml-3 sm:w-auto sm:text-sm dark:bg-sky-600 dark:hover:bg-sky-700 cursor-pointer"
             @click="onClose"
           >
             {{ t('pages.pentathlon.scoring.close') }}

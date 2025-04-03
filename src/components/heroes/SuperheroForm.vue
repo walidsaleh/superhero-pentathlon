@@ -201,7 +201,7 @@ const submitButtonAriaLabel = computed(() => {
 <template>
   <div class="superhero-form">
     <div
-      class="superhero-form-header flex justify-between items-center p-6 border-b dark:border-gray-700"
+      class="superhero-form-header flex justify-between items-center p-6 border-b border-gray-300 dark:border-gray-700"
     >
       <h1 class="text-xl font-bold dark:text-white">
         {{ t(`form.title.${superhero ? 'edit' : 'create'}`) }}
