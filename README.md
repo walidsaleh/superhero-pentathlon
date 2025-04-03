@@ -120,8 +120,5 @@ superhero-pentathlon/
 
 ## Future Enhancements
 
-- Additional superhero attributes and events
-- Tournament mode with multiple rounds
-- User accounts and saved competitions
-- More detailed statistics and analytics
-- Expanded internationalization support
+- Unit tests for components and utilities
+- End-to-end tests for the pentathlon competition flow
