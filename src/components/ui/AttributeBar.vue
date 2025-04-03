@@ -11,6 +11,7 @@ import {
 import { useI18n } from 'vue-i18n'
 // Types
 import type { SuperheroAttributes } from '@/types/superhero'
+import { STAT_LIMITS } from '@/types/superhero'
 
 const { t } = useI18n()
 
@@ -47,6 +48,10 @@ const labels = {
 
 // Computed label based on the type prop
 const label = computed(() => labels[props.type])
+
+// Define min and max values for the attribute bar
+const MIN_VALUE = STAT_LIMITS.MIN
+const MAX_VALUE = STAT_LIMITS.MAX
 </script>
 
 <template>
@@ -66,7 +71,7 @@ const label = computed(() => labels[props.type])
         <span class="sr-only">{{ label }}</span>
         <span class="font-medium dark:text-gray-300">{{ label }}</span>
       </div>
-      <span class="text-sky-600 dark:text-sky-400 font-bold">{{ value }}/10</span>
+      <span class="text-sky-600 dark:text-sky-400 font-bold">{{ value }}/{{ MAX_VALUE }}</span>
     </div>
 
     <div
@@ -77,13 +82,13 @@ const label = computed(() => labels[props.type])
       ]"
       role="progressbar"
       :aria-valuenow="value"
-      aria-valuemin="0"
-      aria-valuemax="10"
-      :aria-label="`${label}: ${value}/10`"
+      :aria-valuemin="MIN_VALUE"
+      :aria-valuemax="MAX_VALUE"
+      :aria-label="`${label}: ${value}/${MAX_VALUE}`"
     >
       <div
         class="h-full bg-sky-500 dark:bg-sky-600 transition-all duration-300 ease-out"
-        :style="{ width: `${(value / 10) * 100}%` }"
+        :style="{ width: `${(value / MAX_VALUE) * 100}%` }"
       />
     </div>
   </div>
