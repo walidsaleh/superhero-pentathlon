@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Vue core
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 // External libraries
 import { Cropper } from 'vue-advanced-cropper'
 // Styles
@@ -25,8 +25,7 @@ const { t } = useI18n()
 const onReady = () => {
   if (!cropperRef.value) return
 
-  // Wait for a tick to ensure the cropper is mounted
-  setTimeout(() => {
+  nextTick(() => {
     // Get the actual size of the container
     const container = document.querySelector('.cropper')
     if (!container) return
@@ -68,7 +67,7 @@ const onReady = () => {
         top: (imageSize.height - cropperSize / scale) / 2
       })
     }
-  }, 0)
+  })
 }
 
 const handleCancel = () => {
