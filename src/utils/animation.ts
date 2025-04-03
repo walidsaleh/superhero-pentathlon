@@ -1,16 +1,12 @@
 /**
- * Funciones de utilidad para animaciones
+ * Constants for podium animations
  */
+export const ANIMATION_INITIAL_DELAY = 100 // ms before starting the sequence
+export const ANIMATION_SEQUENCE_DELAY = 250 // ms between each podium element
 
 /**
- * Constantes para las animaciones del podio
- */
-export const ANIMATION_INITIAL_DELAY = 100 // ms antes de empezar la secuencia
-export const ANIMATION_SEQUENCE_DELAY = 250 // ms entre cada elemento del podio
-
-/**
- * Devuelve un color aleatorio para los confetis
- * @returns Un color hexadecimal aleatorio de la lista predefinida
+ * Returns a random color for confetti
+ * @returns A random color from the predefined list
  */
 export const getRandomConfettiColor = (): string => {
   const colors = [
@@ -25,3 +21,5 @@ export const getRandomConfettiColor = (): string => {
   ]
   return colors[Math.floor(Math.random() * colors.length)]
 }
+
+export const MAX_CONFETTIS = 50 // Maximum number of confetti pieces

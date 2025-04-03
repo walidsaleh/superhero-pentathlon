@@ -7,7 +7,7 @@ import { useI18n } from 'vue-i18n'
 import type { Superhero } from '@/types/superhero'
 import type { FinalRanking } from '@/utils/competition'
 // Utils
-import { getRandomConfettiColor } from '@/utils/animation'
+import { getRandomConfettiColor, MAX_CONFETTIS } from '@/utils/animation'
 
 defineProps({
   finalRankings: {
@@ -51,7 +51,7 @@ const getPositionText = (position: number): string => {
     <!-- Confetti animation -->
     <div class="confetti-container">
       <div
-        v-for="n in 50"
+        v-for="n in MAX_CONFETTIS"
         :key="n"
         class="confetti"
         :style="{
