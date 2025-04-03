@@ -22,18 +22,18 @@ export const useToastStore = defineStore('toast', () => {
 
   const showToast = (message: string, type: ToastType = 'info') => {
     const id = nextId++
-    const toast: Toast = { 
-      id, 
-      message, 
-      type, 
-      remainingTime: TOAST_DURATION_MS 
+    const toast: Toast = {
+      id,
+      message,
+      type,
+      remainingTime: TOAST_DURATION_MS
     }
-    
-    // Crear el timeout para auto-eliminar el toast
+
+    // Create the timeout to auto-remove the toast
     const timeoutId = window.setTimeout(() => {
       removeToast(id)
     }, TOAST_DURATION_MS)
-    
+
     toast.timeoutId = timeoutId
     toasts.value.push(toast)
 
@@ -41,41 +41,41 @@ export const useToastStore = defineStore('toast', () => {
   }
 
   const removeToast = (id: number) => {
-    const index = toasts.value.findIndex(t => t.id === id)
+    const index = toasts.value.findIndex((t) => t.id === id)
     if (index > -1) {
-      // Limpiar el timeout si existe
+      // Clear the timeout if it exists
       if (toasts.value[index].timeoutId) {
         window.clearTimeout(toasts.value[index].timeoutId)
       }
       toasts.value.splice(index, 1)
     }
   }
-  
+
   const pauseToast = (id: number) => {
-    const toast = toasts.value.find(t => t.id === id)
+    const toast = toasts.value.find((t) => t.id === id)
     if (toast && toast.timeoutId && !toast.pausedAt) {
-      // Cancelar el timeout actual
+      // Cancel the current timeout
       window.clearTimeout(toast.timeoutId)
       toast.timeoutId = undefined
-      
-      // Guardar el momento en que se pausa
+
+      // Save the moment it was paused
       toast.pausedAt = Date.now()
     }
   }
-  
+
   const resumeToast = (id: number) => {
-    const toast = toasts.value.find(t => t.id === id)
+    const toast = toasts.value.find((t) => t.id === id)
     if (toast && toast.pausedAt && toast.remainingTime) {
-      // Calcular el tiempo restante ajustado por el tiempo de pausa
+      // Calculate the remaining time adjusted by the pause time
       const elapsedPauseTime = Date.now() - toast.pausedAt
       toast.remainingTime = Math.max(0, toast.remainingTime - elapsedPauseTime)
-      
-      // Crear un nuevo timeout con el tiempo restante
+
+      // Create a new timeout with the remaining time
       toast.timeoutId = window.setTimeout(() => {
         removeToast(id)
       }, toast.remainingTime)
-      
-      // Limpiar el estado de pausa
+
+      // Clear the pause state
       toast.pausedAt = undefined
     }
   }
