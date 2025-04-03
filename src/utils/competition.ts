@@ -1,22 +1,5 @@
+import type { EventType, EventResults, FinalRanking } from '@/types/competition'
 import type { Superhero } from '@/types/superhero'
-
-/**
- * Tipos de eventos disponibles en el pentatlón
- */
-export type EventType = 'wallClimbing' | 'jokeTelling' | 'villainShot' | 'race' | 'catRescue'
-
-export interface EventResult {
-  superheroId: string
-  score: number
-  points: number
-}
-
-export interface FinalRanking {
-  superheroId: string
-  totalPoints: number
-}
-
-export type EventResults = Record<EventType, EventResult[]>
 
 /**
  * Calculates the score for a specific event and hero
@@ -40,7 +23,11 @@ export const calculateEventScore = (
     case 'villainShot':
       return hero.attributes.agility + hero.attributes.strength + (currentRanking === 2 ? 5 : 0)
     case 'race':
-      return hero.attributes.agility * 4 + hero.attributes.endurance * 2 + (previousWinner === hero.id ? 10 : -1)
+      return (
+        hero.attributes.agility * 4 +
+        hero.attributes.endurance * 2 +
+        (previousWinner === hero.id ? 10 : -1)
+      )
     case 'catRescue':
       return hero.attributes.agility * 2
   }

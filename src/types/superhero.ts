@@ -35,15 +35,3 @@ export const STAT_LIMITS = {
   MAX: 10,
   MIN_WEIGHT: 1
 } as const
-
-export interface PentathlonScore {
-  superheroId: string
-  eventScores: {
-    wallClimbing: number
-    jokeTelling: number
-    villainShot: number
-    race: number
-    catRescue: number
-  }
-  totalScore: number
-}
