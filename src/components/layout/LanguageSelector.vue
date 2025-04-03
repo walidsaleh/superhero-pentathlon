@@ -49,7 +49,7 @@ onUnmounted(() => {
   <div class="language-selector relative">
     <button
       type="button"
-      class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-800 dark:text-white hover:bg-sky-200 dark:hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500"
+      class="flex items-center gap-2 px-3 py-2 rounded-lg text-gray-800 dark:text-white hover:bg-sky-200 dark:hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 cursor-pointer"
       :aria-label="t('language.label')"
       :aria-expanded="isOpen"
       @click="isOpen = !isOpen"
@@ -68,7 +68,7 @@ onUnmounted(() => {
 
     <div
       v-if="isOpen"
-      class="absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-sky-50 dark:bg-sky-950 ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
+      class="absolute right-0 mt-2 w-48 rounded-lg shadow-lg bg-sky-50 dark:bg-sky-950 ring-1 ring-sky-300 dark:ring-sky-700 focus:outline-none z-10"
       role="menu"
       :aria-label="t('language.label')"
     >

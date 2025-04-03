@@ -122,7 +122,7 @@ const deleteHero = async () => {
         <div class="flex space-x-2">
           <button
             @click="reloadSuperheroes"
-            class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-4 py-2 rounded flex items-center"
+            class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-4 py-2 rounded flex items-center cursor-pointer"
             :disabled="store.loading"
             :class="{ 'opacity-50 cursor-not-allowed': store.loading }"
           >
@@ -136,7 +136,7 @@ const deleteHero = async () => {
                 setBodyOverflow(true)
               }
             "
-            class="bg-sky-500 dark:bg-sky-600 hover:bg-sky-600 dark:hover:bg-sky-700 text-white px-4 py-2 rounded flex items-center"
+            class="bg-sky-500 dark:bg-sky-600 hover:bg-sky-600 dark:hover:bg-sky-700 text-white px-4 py-2 rounded flex items-center cursor-pointer"
           >
             <UserPlusIcon class="w-5 h-5 mr-2" />
             <span>{{ t('pages.heroes.actions.new') }}</span>

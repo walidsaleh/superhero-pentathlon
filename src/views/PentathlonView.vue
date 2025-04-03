@@ -90,7 +90,7 @@ const handleStartCompetition = () => {
         <!-- Start competition button -->
         <button
           @click="handleStartCompetition"
-          class="px-4 py-2 bg-sky-600 text-white rounded hover:bg-sky-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+          class="px-4 py-2 bg-sky-600 text-white rounded hover:bg-sky-700 disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer"
           :disabled="selectedHeroes.length !== REQUIRED_HEROES"
         >
           {{ t('pages.pentathlon.actions.start') }}
@@ -140,14 +140,14 @@ const handleStartCompetition = () => {
         <div class="flex space-x-2">
           <button
             @click="handleReset"
-            class="flex items-center px-3 py-1.5 bg-gray-600 text-white rounded hover:bg-gray-700"
+            class="flex items-center px-3 py-1.5 bg-gray-600 text-white rounded hover:bg-gray-700 cursor-pointer"
           >
             <ArrowUturnLeftIcon class="w-5 h-5 mr-2" />
             {{ t('pages.pentathlon.actions.reset') }}
           </button>
           <button
             @click="() => (showEventResults = true)"
-            class="flex items-center px-3 py-1.5 bg-sky-600 text-white rounded hover:bg-sky-700"
+            class="flex items-center px-3 py-1.5 bg-sky-600 text-white rounded hover:bg-sky-700 cursor-pointer"
           >
             <ChartBarIcon class="w-5 h-5 mr-2" />
             {{ t('pages.pentathlon.actions.viewDetails') }}
