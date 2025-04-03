@@ -189,6 +189,13 @@ const submitForm = () => {
     handleError
   )
 }
+
+const submitButtonAriaLabel = computed(() => {
+  if (loading.value) {
+    return t('form.aria.loading')
+  }
+  return props.superhero ? t('form.aria.saveChanges') : t('form.aria.createHero')
+})
 </script>
 
 <template>
@@ -397,7 +404,7 @@ const submitForm = () => {
               type="submit"
               class="px-4 py-2 rounded-lg bg-sky-500 dark:bg-sky-400 text-white hover:bg-sky-600 dark:hover:bg-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-sky-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               :disabled="loading"
-              :aria-label="loading ? t('form.aria.loading') : (superhero ? t('form.aria.saveChanges') : t('form.aria.createHero'))"
+              :aria-label="submitButtonAriaLabel"
               :aria-busy="loading"
             >
               <ArrowPathIcon
