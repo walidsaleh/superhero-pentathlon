@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Vue core
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { FunctionalComponent, SVGAttributes } from 'vue'
 // External libraries
 import { PhotoIcon, PencilIcon } from '@heroicons/vue/24/outline'
@@ -334,7 +334,7 @@ const submitButtonAriaLabel = computed(() => {
                   <div class="flex items-center gap-1">
                     <button
                       type="button"
-                      class="w-6 h-6 flex items-center justify-center rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 disabled:opacity-50"
+                      class="w-6 h-6 flex items-center justify-center rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none disabled:opacity-50"
                       :disabled="form.attributes[stat.key] <= STAT_LIMITS.MIN"
                       @click="decreaseStat(stat.key)"
                       :aria-label="
@@ -351,7 +351,7 @@ const submitButtonAriaLabel = computed(() => {
                       type="number"
                       :min="STAT_LIMITS.MIN"
                       :max="STAT_LIMITS.MAX"
-                      class="w-12 text-center px-1 py-0.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent"
+                      class="w-12 text-center px-1 py-0.5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 focus:ring-2 focus:ring-pink-500 dark:focus:ring-pink-400 focus:border-transparent"
                       :class="{ 'border-red-500 dark:border-red-400': shouldShowError(stat.key) }"
                       :aria-label="
                         t('form.attributes.controls.value', {
@@ -366,7 +366,7 @@ const submitButtonAriaLabel = computed(() => {
                     />
                     <button
                       type="button"
-                      class="w-6 h-6 flex items-center justify-center rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 disabled:opacity-50"
+                      class="w-6 h-6 flex items-center justify-center rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none disabled:opacity-50"
                       :disabled="form.attributes[stat.key] >= STAT_LIMITS.MAX"
                       @click="increaseStat(stat.key)"
                       :aria-label="
@@ -391,10 +391,12 @@ const submitButtonAriaLabel = computed(() => {
             </div>
           </div>
 
-          <div class="border-t dark:border-gray-700 mt-6 pt-4 flex justify-end space-x-4">
+          <div
+            class="border-t border-gray-300 dark:border-gray-700 mt-6 pt-4 flex justify-end space-x-4"
+          >
             <button
               type="button"
-              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-colors duration-200"
+              class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 dark:focus:ring-pink-400 transition-colors duration-200"
               @click="emit('close')"
               :aria-label="t('form.aria.close')"
             >
