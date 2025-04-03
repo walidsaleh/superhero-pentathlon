@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { CheckIcon } from '@heroicons/vue/24/solid'
 import { useI18n } from 'vue-i18n'
-import AttributeBarCompact from '@/components/ui/AttributeBarCompact.vue'
+import AttributeBar from '@/components/ui/AttributeBar.vue'
 import type { Superhero } from '@/types/superhero'
 
 const { t } = useI18n()
@@ -55,7 +55,7 @@ const handleClick = () => {
 
 <template>
   <div
-    class="superhero-compact-card p-4 border rounded-lg border-gray-300 dark:border-gray-700 flex items-start gap-6 relative"
+    class="superhero-compact-card p-4 rounded-lg border border-gray-300 dark:border-gray-700 flex items-start gap-6 relative"
     :class="{
       'border-sky-500 dark:border-sky-400 bg-sky-50 dark:bg-sky-900/20 cursor-pointer hover:border-sky-600 dark:hover:border-sky-500':
         isSelected,
@@ -92,31 +92,11 @@ const handleClick = () => {
       <h3 class="text-base font-semibold dark:text-white font-karla pl-6">
         {{ hero.name }}
       </h3>
-      <AttributeBarCompact
-        :label="t('form.attributes.stats.agility')"
-        :value="hero.attributes.agility"
-        type="agility"
-      />
-      <AttributeBarCompact
-        :label="t('form.attributes.stats.strength')"
-        :value="hero.attributes.strength"
-        type="strength"
-      />
-      <AttributeBarCompact
-        :label="t('form.attributes.stats.weight')"
-        :value="hero.attributes.weight"
-        type="weight"
-      />
-      <AttributeBarCompact
-        :label="t('form.attributes.stats.endurance')"
-        :value="hero.attributes.endurance"
-        type="endurance"
-      />
-      <AttributeBarCompact
-        :label="t('form.attributes.stats.charisma')"
-        :value="hero.attributes.charisma"
-        type="charisma"
-      />
+      <AttributeBar :value="hero.attributes.agility" type="agility" compact />
+      <AttributeBar :value="hero.attributes.strength" type="strength" compact />
+      <AttributeBar :value="hero.attributes.weight" type="weight" compact />
+      <AttributeBar :value="hero.attributes.endurance" type="endurance" compact />
+      <AttributeBar :value="hero.attributes.charisma" type="charisma" compact />
     </div>
   </div>
 </template>
