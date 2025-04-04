@@ -12,27 +12,29 @@ export function useHeroSelection() {
   const store = useSuperheroStore()
   const toastStore = useToastStore()
   const { t } = useI18n()
-  
+
   // Selection state
   const selectedHeroes = ref<string[]>([])
   const isLoading = ref(true)
-  
+
   // Available heroes from the store
   const availableHeroes = computed(() => store.superheroes)
-  
+
   /**
-   * Toggle hero selection
-   * @param heroId The ID of the hero to toggle
+   * Toggle hero selection for the competition
    */
   const toggleHeroSelection = (heroId: string) => {
-    const index = selectedHeroes.value.indexOf(heroId)
-    if (index === -1 && selectedHeroes.value.length < REQUIRED_HEROES) {
-      selectedHeroes.value.push(heroId)
-    } else if (index !== -1) {
-      selectedHeroes.value.splice(index, 1)
+    const isSelected = isHeroSelected(heroId)
+
+    if (isSelected) {
+      // If the hero is already selected, remove it
+      selectedHeroes.value = selectedHeroes.value.filter((id) => id !== heroId)
+    } else if (selectedHeroes.value.length < REQUIRED_HEROES) {
+      // If not selected and limit not reached, add it
+      selectedHeroes.value = [...selectedHeroes.value, heroId]
     }
   }
-  
+
   /**
    * Check if a hero is selected
    * @param heroId The ID of the hero to check
@@ -40,14 +42,14 @@ export function useHeroSelection() {
   const isHeroSelected = (heroId: string) => {
     return selectedHeroes.value.includes(heroId)
   }
-  
+
   /**
    * Clear all selected heroes
    */
   const clearSelection = () => {
     selectedHeroes.value = []
   }
-  
+
   /**
    * Load heroes if needed
    */
@@ -64,21 +66,21 @@ export function useHeroSelection() {
       isLoading.value = false
     }
   }
-  
+
   /**
    * Check if selection is complete
    */
   const isSelectionComplete = computed(() => {
     return selectedHeroes.value.length === REQUIRED_HEROES
   })
-  
+
   /**
    * Get the number of heroes still needed
    */
   const heroesNeeded = computed(() => {
     return Math.max(0, REQUIRED_HEROES - selectedHeroes.value.length)
   })
-  
+
   /**
    * Message for hero selection status
    */
@@ -90,26 +92,26 @@ export function useHeroSelection() {
       return t('pages.pentathlon.selection.selectMoreHeroes', { count })
     }
   })
-  
+
   /**
    * Check if there are enough heroes available
    */
   const hasEnoughHeroes = computed(() => {
     return availableHeroes.value.length >= REQUIRED_HEROES
   })
-  
+
   return {
     // State
     selectedHeroes,
     isLoading,
     availableHeroes,
-    
+
     // Computed
     isSelectionComplete,
     heroesNeeded,
     selectionMessage,
     hasEnoughHeroes,
-    
+
     // Methods
     toggleHeroSelection,
     isHeroSelected,

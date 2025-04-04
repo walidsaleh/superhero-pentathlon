@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 import { useSuperheroStore } from '@/stores/superhero'
 import { useToastStore } from '@/stores/toast'
 import type { Superhero } from '@/types/superhero'
+import { useHeroSelection } from '@/composables/useHeroSelection'
 import { REQUIRED_HEROES } from '@/config/constants'
 import {
   type EventResults,
@@ -20,8 +21,10 @@ export function useCompetition() {
   const toastStore = useToastStore()
   const { t } = useI18n()
 
+  // Reuse hero selection logic
+  const { selectedHeroes, toggleHeroSelection, isHeroSelected } = useHeroSelection()
+
   // Competition state
-  const selectedHeroes = ref<string[]>([])
   const competitionStarted = ref(false)
   const showEventResults = ref(false)
   const isLoading = ref(true)
@@ -49,30 +52,6 @@ export function useCompetition() {
 
   // Final rankings after all events
   const finalRankings = ref<FinalRanking[]>([])
-
-  /**
-   * Toggle hero selection for the competition
-   */
-  const toggleHeroSelection = (heroId: string) => {
-    console.log('Toggling hero selection:', heroId)
-    const index = selectedHeroes.value.indexOf(heroId)
-    if (index === -1 && selectedHeroes.value.length < REQUIRED_HEROES) {
-      selectedHeroes.value.push(heroId)
-      console.log('Hero selected:', heroId, 'Current selection:', selectedHeroes.value)
-    } else if (index !== -1) {
-      selectedHeroes.value.splice(index, 1)
-      console.log('Hero deselected:', heroId, 'Current selection:', selectedHeroes.value)
-    } else {
-      console.log('Cannot select hero:', heroId, 'Current selection:', selectedHeroes.value)
-    }
-  }
-
-  /**
-   * Check if a hero is selected
-   */
-  const isHeroSelected = (heroId: string) => {
-    return selectedHeroes.value.includes(heroId)
-  }
 
   /**
    * Calculate the score for a specific event and hero
