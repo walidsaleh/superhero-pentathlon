@@ -133,17 +133,17 @@ export function useCompetition() {
   }
 
   /**
-   * Get hero name by ID
-   */
-  const getHeroName = (id: string) => {
-    return store.getSuperheroById(id)?.name || 'Unknown Hero'
-  }
-
-  /**
    * Get hero by ID
    */
   const getHeroById = (id: string) => {
     return store.getSuperheroById(id)
+  }
+
+  /**
+   * Get hero name by ID
+   */
+  const getHeroName = (id: string) => {
+    return getHeroById(id)?.name || 'Unknown Hero'
   }
 
   /**
