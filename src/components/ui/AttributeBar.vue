@@ -31,11 +31,10 @@ const iconMap = {
   charisma: SparklesIcon
 } as const
 
-// Function to get the icon component based on the type prop
-const getIcon = () => {
-  const IconComponent = iconMap[props.type]
-  return IconComponent
-}
+// Computed icon component based on the type prop
+const iconComponent = computed(() => {
+  return iconMap[props.type]
+})
 
 // Labels map
 const labels = {
@@ -63,12 +62,15 @@ const MAX_VALUE = STAT_LIMITS.MAX
     }"
   >
     <template v-if="compact">
-      <component :is="getIcon()" class="w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400" />
+      <component
+        :is="iconComponent"
+        class="w-4 h-4 flex-shrink-0 text-gray-600 dark:text-gray-400"
+      />
       <span class="sr-only">{{ label }}</span>
     </template>
     <div v-else class="flex justify-between text-sm">
       <div class="flex items-center gap-2">
-        <component :is="getIcon()" class="w-4 h-4 text-gray-600 dark:text-gray-400" />
+        <component :is="iconComponent" class="w-4 h-4 text-gray-600 dark:text-gray-400" />
         <span class="font-medium dark:text-gray-300">{{ label }}</span>
       </div>
       <span class="text-sky-600 dark:text-sky-400 font-bold">{{ value }}/{{ MAX_VALUE }}</span>
