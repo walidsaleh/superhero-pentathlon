@@ -49,9 +49,9 @@ const MAX_VALUE = STAT_LIMITS.MAX
 <template>
   <div
     :class="{
-      'superhero-attribute-bar': true,
-      'attribute-bar-compact flex items-center gap-2': compact,
-      'flex flex-col gap-1 w-full': !compact
+      'superhero-attribute-bar flex': true,
+      'superhero-attribute-bar--compact items-center gap-2': compact,
+      'flex-col gap-1': !compact
     }"
   >
     <template v-if="compact">
@@ -74,7 +74,7 @@ const MAX_VALUE = STAT_LIMITS.MAX
       :min="MIN_VALUE"
       :max="MAX_VALUE"
       :aria-label="`${label}: ${value}/${MAX_VALUE}`"
-      class="w-full h-2 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden appearance-none [&::-webkit-progress-bar]:bg-gray-200 dark:[&::-webkit-progress-bar]:bg-gray-800 [&::-webkit-progress-value]:bg-sky-500 [&::-moz-progress-bar]:bg-sky-500"
+      class="w-full h-1 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden appearance-none [&::-webkit-progress-bar]:bg-gray-200 dark:[&::-webkit-progress-bar]:bg-gray-800 [&::-webkit-progress-value]:bg-sky-500 [&::-moz-progress-bar]:bg-sky-500"
     />
   </div>
 </template>
