@@ -10,7 +10,7 @@ import {
 } from '@heroicons/vue/24/solid'
 import { useI18n } from 'vue-i18n'
 // Types
-import type { SuperheroAttributes } from '@/types/superhero'
+import type { SuperheroAttribute } from '@/types/superhero'
 import { STAT_LIMITS } from '@/types/superhero'
 
 const { t } = useI18n()
@@ -18,7 +18,7 @@ const { t } = useI18n()
 // Define props
 const props = defineProps<{
   value: number
-  type: keyof SuperheroAttributes
+  type: SuperheroAttribute
   compact?: boolean // Optional prop to toggle compact mode
 }>()
 
@@ -36,17 +36,10 @@ const iconComponent = computed(() => {
   return iconMap[props.type]
 })
 
-// Labels map
-const labels = {
-  agility: t('form.attributes.stats.agility'),
-  strength: t('form.attributes.stats.strength'),
-  weight: t('form.attributes.stats.weight'),
-  endurance: t('form.attributes.stats.endurance'),
-  charisma: t('form.attributes.stats.charisma')
-}
-
 // Computed label based on the type prop
-const label = computed(() => labels[props.type])
+const label = computed(() => {
+  return t(`form.attributes.stats.${props.type}`)
+})
 
 // Define min and max values for the attribute bar
 const MIN_VALUE = STAT_LIMITS.MIN
