@@ -4,8 +4,8 @@ import { StarIcon } from '@heroicons/vue/24/solid'
 // Vue ecosystem
 import { useI18n } from 'vue-i18n'
 // Types
+import type { FinalRanking } from '@/types/competition'
 import type { Superhero } from '@/types/superhero'
-import type { FinalRanking } from '@/utils/competition'
 // Utils
 import { getRandomConfettiColor, MAX_CONFETTIS } from '@/utils/animation'
 
